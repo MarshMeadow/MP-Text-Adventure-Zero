@@ -38,7 +38,7 @@ class FancyCatAdventure
         Console.WriteLine("1. Follow the familiar trail to Squiggleville.");
         Console.WriteLine("2. Chase a butterfly that flutters just out of reach.");
         Console.WriteLine("3. Investigate a glowing, secret path hidden by the trees.");
-        Console.WriteLine("4. Skip to the next part.");
+        Console.WriteLine("4. Take a nap under the sun for some extra energy.");
         Console.WriteLine("5. Go back to the previous section (Start the adventure).");
         Console.Write("Choose (1, 2, 3, 4, or 5): ");
 
@@ -69,8 +69,7 @@ class FancyCatAdventure
         }
         else if (choice == "4")
         {
-            Console.WriteLine("\nYou choose to skip ahead, but feel free to explore the adventure later.");
-            ContinueAdventure();
+            TakeNap();
         }
         else if (choice == "5")
         {
@@ -236,35 +235,32 @@ class FancyCatAdventure
         ContinueAdventure();
     }
 
+    static void TakeNap()
+    {
+        Console.ForegroundColor = ConsoleColor.DarkYellow;
+        Console.WriteLine("\nThe sun is warm, the grass is soft, and the world is at peace.");
+        Console.WriteLine("You curl up for a nap, purring yourself into a gentle slumber.");
+        Console.WriteLine();
+
+        // Restore energy or some other bonus
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        Console.WriteLine("After a refreshing nap, you feel ready to face whatever challenges lie ahead.");
+
+        // Continue the adventure
+        ContinueAdventure();
+    }
+
     static void ContinueAdventure()
     {
         Console.ForegroundColor = ConsoleColor.DarkYellow;
-        Console.WriteLine("\nYou have completed another part of your Fancy Pants Adventure!");
-        Console.WriteLine("Do you want to:");
-        Console.WriteLine("1. Continue the adventure.");
-        Console.WriteLine("2. End your journey.");
-        Console.Write("Choose (1 or 2): ");
+        Console.WriteLine("\nWith a twinkle in your eye and a skip in your step, you carry on with your journey.");
+        Console.WriteLine("The world is yours to explore—filled with secrets, surprises, and little bits of magic just for you.");
+        Console.WriteLine("Congratulations, Fancy Cat! This is only the beginning of your Fancy Pants Adventure.");
+        Console.WriteLine();
 
+        // End the game
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.WriteLine("Thank you for playing Fancy Pants Adventure!");
         Console.ForegroundColor = ConsoleColor.White;
-        string choice = Console.ReadLine();
-
-        while (choice != "1" && choice != "2")
-        {
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("Error: Invalid choice. Please select 1 or 2.");
-            Console.Write("Choose (1 or 2): ");
-
-            Console.ForegroundColor = ConsoleColor.White;
-            choice = Console.ReadLine();
-        }
-
-        if (choice == "1")
-        {
-            StartAdventure();
-        }
-        else if (choice == "2")
-        {
-            Console.WriteLine("\nThank you for playing, brave feline! Your Fancy Pants Adventure has come to an end.");
-        }
     }
 }
